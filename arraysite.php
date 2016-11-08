@@ -58,6 +58,13 @@
 ?>
 
 <html> <h3> array_push </h3> </html>
+
+<?php
+  $stack = array("orange", "banana");
+  array_push($stack, "apple", "raspberry");
+  print_r($stack);
+?>
+
 <html> <h3> array_combine </h3> </html>
 <html> <h3> fgetcsv </h3> </html>
 <html> <h3> implode </h3> </html>
