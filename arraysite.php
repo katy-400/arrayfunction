@@ -66,6 +66,14 @@
 ?>
 
 <html> <h3> array_combine </h3> </html>
+  <?php
+    $a = array('green', 'red', 'yellow');
+    $b = array('avocado', 'apple', 'banana');
+    $c = array_combine($a, $b);
+    
+    print_r($c);
+  ?>
+
 <html> <h3> fgetcsv </h3> </html>
 <html> <h3> implode </h3> </html>
 <html> <h3> explode </h3> </html>
