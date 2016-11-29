@@ -74,9 +74,6 @@
     print_r($c);
   ?>
 
-<html> <h3> fgetcsv </h3> </html>
-
-
 <html> <h3> implode </h3> </html>
 
   <?php
@@ -96,23 +93,32 @@
 <html> <h3> explode </h3> </html>
 
   <?php
-  echo "<pre>";
-  /* 
-     A string that doesn't contain the delimiter will simply
-     return a one-length array of the original string.
-  */
-  $input1 = "sup"; 
-  $input2 = "sup,playa";
-  $input3 = 'how,you,doing,boi';
-  var_dump( explode( ',', $input1 ) );
-  var_dump( explode( ',', $input2 ) );
-  var_dump( explode( ',', $input3 ) );
-  
-  echo "<\pre>";
+    echo "<pre>";
+    //This is counting the characters and breaking the strings apart.
+    $input1 = "sup"; 
+    $input2 = "sup,playa";
+    $input3 = 'how,you,doing,boi';
+    var_dump( explode( ',', $input1 ) );
+    var_dump( explode( ',', $input2 ) );
+    var_dump( explode( ',', $input3 ) );
+    
+    echo "<\pre>";
   
   ?>
 
 <html> <h3> array_intersect </h3> </html>
+
+//This is finding what is in common between the two arrays.
+<?php
+  echo "<pre>";
+  $array1 = array("a" => "green", "red", "blue", "yellow");
+  $array2 = array("b" => "green", "yellow", "red");
+  $result = array_intersect($array1, $array2);
+  print_r($result);
+  echo "<\pre>";
+?>
+
+<html> <h3> fgetcsv </h3> </html>
 <html> <h3> array_div </h3> </html>
 <html> <h3> </h3> </html>
 <html> <h3> </h3> </html>
