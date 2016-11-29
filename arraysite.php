@@ -75,8 +75,43 @@
   ?>
 
 <html> <h3> fgetcsv </h3> </html>
+
+
 <html> <h3> implode </h3> </html>
+
+  <?php
+  
+    $array = array('Nyby', 'kn69@poop.com', '101-505-8008');
+    $comma_separated = implode(", ", $array);
+    
+    echo $comma_separated; // lastname,email,phone
+    
+    echo "<br>" ;
+       
+    // Empty string when using an empty array:
+    var_dump(implode('hello', array(hello))); // string(0) ""
+  
+  ?>
+
 <html> <h3> explode </h3> </html>
+
+  <?php
+  echo "<pre>";
+  /* 
+     A string that doesn't contain the delimiter will simply
+     return a one-length array of the original string.
+  */
+  $input1 = "sup"; 
+  $input2 = "sup,playa";
+  $input3 = 'how,you,doing,boi';
+  var_dump( explode( ',', $input1 ) );
+  var_dump( explode( ',', $input2 ) );
+  var_dump( explode( ',', $input3 ) );
+  
+  echo "<\pre>";
+  
+  ?>
+
 <html> <h3> array_intersect </h3> </html>
 <html> <h3> array_div </h3> </html>
 <html> <h3> </h3> </html>
