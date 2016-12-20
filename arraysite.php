@@ -108,19 +108,92 @@
 
 <html> <h3> array_intersect </h3> </html>
 
-//This is finding what is in common between the two arrays.
-<?php
-  echo "<pre>";
-  $array1 = array("a" => "green", "red", "blue", "yellow");
-  $array2 = array("b" => "green", "yellow", "red");
-  $result = array_intersect($array1, $array2);
-  print_r($result);
-  echo "<\pre>";
-?>
+  //This is finding what is in common between the two arrays.
+  <?php
+    echo "<pre>";
+    $array1 = array("a" => "green", "red", "blue", "yellow");
+    $array2 = array("b" => "green", "yellow", "red");
+    $result = array_intersect($array1, $array2);
+    print_r($result);
+    echo "<\pre>";
+  ?>
 
 <html> <h3> fgetcsv </h3> </html>
+
+  <?php
+  $row = 1;
+  if (($handle = fopen("Names.csv", "r")) !== FALSE) {
+      while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+          $num = count($data);
+          echo "<p> $num fields in line $row: <br /></p>\n";
+          $row++;
+          for ($c=0; $c < $num; $c++) {
+              echo $data[$c] . "<br />\n";
+          }
+      }
+      fclose($handle);
+  }
+  ?>
+
 <html> <h3> array_div </h3> </html>
-<html> <h3> </h3> </html>
-<html> <h3> </h3> </html>
-<html> <h3> </h3> </html>
-<html> <h3> </h3> </html>
+
+  <?php
+  
+  $array1 = array("a" => "green", "red", "blue", "red");
+  $array2 = array("b" => "green", "yellow", "red");
+  $result = array_diff($array1, $array2);
+  
+  print_r($result);
+
+  ?>
+
+<html> <h3> in_array </h3> </html>
+
+  <?php
+    $os = array("Mac", "NT", "Irix", "Linux");
+    if (in_array("Irix", $os)) {
+        echo "Got Irix";
+    }
+    if (in_array("mac", $os)) {
+        echo "Got mac";
+    }
+  ?>
+
+<html> <h3> usort </h3> </html>
+
+  <?php
+    function cmp($a, $b)
+    {
+        if ($a == $b) {
+            return 0;
+        }
+        return ($a < $b) ? -1 : 1;
+    }
+    $a = array(3, 2, 5, 6, 1);
+    usort($a, "cmp");
+    foreach ($a as $key => $value) {
+        echo "$key: $value\n";
+    }
+
+  ?>
+
+<html> <h3> range </h3> </html>
+
+  <?php
+    // array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+    foreach (range(0, 12) as $number) {
+        echo $number;
+    }
+  ?>
+
+<html> <h3> sort </h3> </html>
+
+  <?php
+    
+    $fruits = array("lemon", "orange", "banana", "apple");
+    sort($fruits);
+    foreach ($fruits as $key => $val) {
+        echo "fruits[" . $key . "] = " . $val . "\n";
+    }
+
+  ?>
